@@ -4,25 +4,23 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Security-Policy" content="default-src * gap: file:; style-src 'self' 'unsafe-inline' *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *">
-
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Seek-n-Find</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-
-    <button id="cameraBtn" class="button">Take a Photo</button>
-    <div>
-        <p>Hello world</p>
+    <div class="splashScreen">
+        <h1>SEEK-N-FIND</h1>
+        <div class="buttons">
+            <button id="startBtn">Start</button>
+            <button>Help</button>
+        </div>
     </div>
-    <button id="click">Click</button>
-    <button id="btn">GEO</button>
-    <div id="content"></div>
 
     <script src="js/jQuery.js"></script>
     <script src="js/app.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
-
 </body>
 
 </html>

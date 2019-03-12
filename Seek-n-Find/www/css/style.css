@@ -1,0 +1,56 @@
+.wrapper {
+}
+
+.titleWrapper {
+  text-align: center;
+}
+
+.gameTitle {
+  display: inline-block;
+}
+.setupOptions {
+}
+
+.option {
+  border: 2px solid black;
+  border-radius: 25px;
+  padding: 20px;
+  margin: 8px;
+}
+
+.optionTitle {
+  border-bottom: 1px solid black;
+  margin-bottom: 8px;
+}
+
+.topInfoBar > ul {
+  list-style: none;
+}
+
+.topInfoBar > ul > li {
+  display: inline-block;
+}
+
+.itemList > ul {
+  list-style: none;
+  width: 70%;
+}
+
+.itemList>ul>li:first-child {
+  /* display: inline; */
+  /* border-top: 1px solid black; */
+
+}
+
+.itemList > ul > li {
+  /* display: inline; */
+  /* border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black; */
+  
+}
+
+.camIcon {
+  width: 20px;
+  float: right;
+}

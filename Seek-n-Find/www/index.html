@@ -12,10 +12,12 @@
 <body>
     <!-- splash screen -->
     <div id="splashScreen" class="splashScreen">
-        <h1>SEEK-N-FIND</h1>
+        <div class="titleWrapper">
+            <h1 class="gameTitle">SEEK-N-FIND</h1>
+        </div>
         <div class="buttons">
-            <button id="startBtn">Start</button>
-            <button>Help</button>
+            <button id="startBtn" class="mainBtn">Start</button><br>
+            <button class="mainBtn">Help</button>
         </div>
     </div>
 
@@ -25,18 +27,6 @@
             <h1 class="gameTitle">SEEK-N-FIND</h1>
         </div>
         <div class="setupOptions">
-            <div class="option">
-                <h3 class="optionTitle">Where would you like to play?</h3>
-                <div>
-                    <input type="radio" id="outside" name="location" value="outside" checked>
-                    <label for="outside">Outside</label>
-                </div>
-                <div>
-                    <input type="radio" id="inside" name="location" value="inside">
-                    <label for="inside">Inside</label>
-                </div>
-            </div>
-
             <div class="option">
                 <h3 class="optionTitle">How many items?</h3>
                 <div>
@@ -53,8 +43,8 @@
                 </div>
             </div>
             <div class="buttons">
-                <button id="casualBtn">Casual</button>
-                <button id="timeAttackBtn">Time Attack</button>
+                <button id="casualBtn" class="mainBtn">Casual</button>
+                <button id="timeAttackBtn" class="mainBtn">Time Attack</button>
             </div>
         </div>
     </div>
@@ -67,7 +57,7 @@
         <div class="topInfoBar">
             <ul>
                 <li class="endBtn">
-                    <p>Give up</p>
+                    <button id="exitBtn">Give up</button>
                 </li>
                 <li class="timmer">
                     TIME
@@ -79,6 +69,21 @@
         <div>
             <ul id="itemList">
             </ul>
+        </div>
+    </div>
+
+    <!-- Winning Gallery -->
+    <div id="winningScreen" class="wrapper" hidden>
+        <div>
+            <h2>Your Photos</h2>
+            <div class="gallery" id="galleryDiv">
+
+            </div>
+            <div class="buttons">
+                <button id="endBtn" class="mainBtn">Finished</button>
+
+            </div>
+
         </div>
     </div>
 

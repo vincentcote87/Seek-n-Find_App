@@ -1,12 +1,14 @@
 let fadeTime = 200;
 let pos = -1;
 let imgLocation = [];
+let itemList = [];
+let itemAmount = 0;
 
 const outdoorItems = ['Tree', 'Yellow Door', 'Stop Sign', 'Red Car',
   'Playground', 'Garbage Can', 'Dog', 'Lake',
   'Rock', 'Fire Hydrant', 'Yeild Sign', 'Crosswalk',
   'Playground Zone', 'Fence', 'Bicycle', 'Mailbox',
-  'Bird', 'City Bus', 'Flag', 'Bricks', 'Basket Ball Net',
+  'Bird', 'City Bus', 'Flag', 'Bricks', 'Basketball Net',
   'Bench', 'Letter "E"', 'Picket Fence', 'Police Car',
   'Ladder', 'Bumper Sticker', 'Cat', 'Newspaper'
 ];
@@ -25,10 +27,32 @@ $('#startBtn').on('click', function () {
 });
 
 $('#casualBtn').on('click', function () {
+  itemAmount = $("input[name='itemAmount']:checked").val();
+  initList(itemAmount);
   $('#setupScreen').fadeOut(fadeTime, function () {
     $('#gameScreen').fadeIn(fadeTime);
   });
 });
+
+$(document).on('click', '.done', function () {
+  pos = $(this).index();
+  $('#fullScreen').fadeIn(200);
+  $('#fullScreenImg').attr('src', $(`#item${pos}`).attr('src'));
+});
+
+$(document).on('click', '#fullScreen', function () {
+  $('#fullScreen').fadeOut(200);
+});
+
+$('#exitBtn').on('click', function () {
+  if (confirm("Are you sure?")) {
+    goHome('gameScreen');
+  }
+});
+
+$('#endBtn').on('click', function() {
+  goHome('winningScreen');
+})
 
 
 // Helper Functions
@@ -49,15 +73,36 @@ function getItems() {
 };
 
 function initList(amt) {
-  // $('#itemList').append("<li>Hello</li>");
-  // $(body).append("FUCKYUOU");
   for (let i = 0; i < amt; ++i) {
     $('#itemList').append(`<li class="item"><h2><img id="item${i}" class="camIcon" src="./imgs/camIcon.png" alt="cam" align="middle">${itemList[i]}</h2></li>`);
   }
 };
 
-let itemList = getItems();
-initList(6);
+function initWin() {
+  alert("You found all the items!! Well done!");
+  addToGrid();
+  $('#gameScreen').fadeOut(fadeTime, function () {
+    $('#winningScreen').fadeIn(fadeTime);
+  });
+};
+
+function goHome(from) {
+  $(`#${from}`).fadeOut(fadeTime, function () {
+    $('#splashScreen').fadeIn(fadeTime);
+  });
+  itemList = [];
+  itemList = getItems();
+  imgLocation = [];
+  $('#itemList').empty();
+}
+
+function addToGrid() {
+  for (let i = 0; i < imgLocation.length; ++i) {
+    $('#galleryDiv').append(`<img src=${imgLocation[i].location} class="done gridImg">`);
+  }
+}
+
+itemList = getItems();
 
 document.addEventListener("deviceready", init, false);
 
@@ -71,11 +116,13 @@ function init() {
   };
 
   function cameraSuccess(imageURI) {
-    // console.log('You got a photo');
     let img = new Image(imageURI);
     $(`#item${pos}`).attr('src', img.location);
     $('#itemList').find(`li:eq(${pos})`).attr('class', 'done');
     imgLocation.push(img);
+    itemAmount--;
+    if (itemAmount <= 0)
+      initWin();
   }
 
   function cameraFail(msg) {

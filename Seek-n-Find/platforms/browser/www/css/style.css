@@ -1,13 +1,12 @@
+ @import url('https://fonts.googleapis.com/css?family=Lilita+One');
+
 * {
   padding: 0;
   margin: 0;
 }
 
 body {
-  background: cornflowerblue;
-}
-
-.wrapper {
+  background: url('../imgs/backImg.jpg');
 }
 
 .titleWrapper {
@@ -16,8 +15,35 @@ body {
 
 .gameTitle {
   display: inline-block;
+  font-size: 76px;
+  text-shadow: 4px 4px 2px rgb(218, 179, 221);
+  font-family: 'Lilita One', cursive;
+  color: rgb(145, 21, 114);
 }
-.setupOptions {
+
+.buttons {
+  text-align: center;
+}
+
+.mainBtn {
+
+  box-shadow:inset 1px 27px 40px -4px #efdcfb;
+  box-shadow: 2px 2px 8px rgb(54, 54, 54);
+  background:linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
+  /* filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfbdfa', endColorstr='#bc80ea', GradientType=0); */
+  background-color:#dfbdfa;
+  border-radius:42px;
+  border:1px solid #c584f3;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:28px;
+  font-weight:bold;
+  padding:15px 76px;
+  text-decoration:none;
+  margin: 20px;
+  min-width: 330px;
 }
 
 .option {
@@ -25,6 +51,7 @@ body {
   border-radius: 25px;
   padding: 20px;
   margin: 8px;
+  background: white;
 }
 
 .optionTitle {
@@ -32,11 +59,11 @@ body {
   margin-bottom: 8px;
 }
 
-.topInfoBar > ul {
+.topInfoBar>ul {
   list-style: none;
 }
 
-.topInfoBar > ul > li {
+.topInfoBar>ul>li {
   display: inline-block;
 }
 
@@ -44,21 +71,30 @@ body {
   list-style: none;
   width: 80%;
   margin: 0 auto;
+  
 }
 
-#itemList > li:first-child {
+#itemList>li:first-child {
   /* display: inline; */
   /* border-top: 1px solid black; */
 
 }
 
-#itemList > li {
+#itemList>li {
   /* display: inline; */
   /* border-right: 1px solid black;
   border-bottom: 1px solid black;
   border-left: 1px solid black; */
   padding: 10px;
   overflow: auto;
+  background: rgb(218, 179, 221);
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+#itemList>li:nth-child(odd) {
+    background: rgb(194, 113, 173);
+
 }
 
 li img {
@@ -70,6 +106,7 @@ li img {
 .done img {
   border: 2px solid white;
   box-shadow: 2px 2px 10px #222222;
+  border-radius: 30px;
 }
 
 #fullScreen {
@@ -87,9 +124,23 @@ li img {
   margin: 0 auto;
   width: 100%;
   top: 20%;
-  
+
 }
 
 h2 {
   size: 36px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 8px;
+  margin: 10px;
+}
+
+.gridImg {
+  grid-column: span 1;
+  width: 100%;
+  border: 2px solid white;
+  box-shadow: 2px 2px 10px #222222;
 }

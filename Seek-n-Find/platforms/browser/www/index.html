@@ -10,11 +10,75 @@
 </head>
 
 <body>
-    <div class="splashScreen">
+    <!-- splash screen -->
+    <div id="splashScreen" class="splashScreen">
         <h1>SEEK-N-FIND</h1>
         <div class="buttons">
             <button id="startBtn">Start</button>
             <button>Help</button>
+        </div>
+    </div>
+
+    <!-- setup screen -->
+    <div id="setupScreen" class="wrapper" hidden>
+        <div class="titleWrapper">
+            <h1 class="gameTitle">SEEK-N-FIND</h1>
+        </div>
+        <div class="setupOptions">
+            <div class="option">
+                <h3 class="optionTitle">Where would you like to play?</h3>
+                <div>
+                    <input type="radio" id="outside" name="location" value="outside" checked>
+                    <label for="outside">Outside</label>
+                </div>
+                <div>
+                    <input type="radio" id="inside" name="location" value="inside">
+                    <label for="inside">Inside</label>
+                </div>
+            </div>
+
+            <div class="option">
+                <h3 class="optionTitle">How many items?</h3>
+                <div>
+                    <input type="radio" id="six" name="itemAmount" value="6" checked>
+                    <label for="six">6 Items</label>
+                </div>
+                <div>
+                    <input type="radio" id="twelve" name="itemAmount" value="12">
+                    <label for="twelve">12 Items</label>
+                </div>
+                <div>
+                    <input type="radio" id="sixteen" name="itemAmount" value="16">
+                    <label for="sixteen">16 Items</label>
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="casualBtn">Casual</button>
+                <button id="timeAttackBtn">Time Attack</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- game screen -->
+    <div id="gameScreen" class="wrapper" hidden>
+        <div id="fullScreen" hidden>
+            <img id="fullScreenImg" src="" alt="">
+        </div>
+        <div class="topInfoBar">
+            <ul>
+                <li class="endBtn">
+                    <p>Give up</p>
+                </li>
+                <li class="timmer">
+                    TIME
+                </li>
+            </ul>
+            <!-- crashes the app from loading deviceready -->
+            <!-- <div class="map"></div> -->
+        </div>
+        <div>
+            <ul id="itemList">
+            </ul>
         </div>
     </div>
 

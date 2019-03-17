@@ -26,6 +26,18 @@ $('#startBtn').on('click', function () {
   });
 });
 
+$('#helpBtn').on('click', function () {
+  $('#splashScreen').fadeOut(fadeTime, function () {
+    $('#helpScreen').fadeIn(fadeTime);
+  });
+});
+
+$('#closeHelp').on('click', function () {
+  $('#helpScreen').fadeOut(fadeTime, function () {
+    $('#splashScreen').fadeIn(fadeTime);
+  });
+});
+
 $('#casualBtn').on('click', function () {
   itemAmount = $("input[name='itemAmount']:checked").val();
   initList(itemAmount);

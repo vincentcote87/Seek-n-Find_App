@@ -12,7 +12,7 @@
         Vincent Cote
     </author>
     <plugin name="cordova-plugin-camera" />
-    <icon src="./www/res/icon/icon.png"/>
+    <icon src="./www/res/icon/icon.png" gap:platform="ios" />
     <content src="index.html" />
     <access origin="*" />
     <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
@@ -20,9 +20,6 @@
     </edit-config>
     <edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="merge">
       <string>need photo library access to get pictures from there</string>
-    </edit-config>
-    <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
-      <string>need location access to find things nearby</string>
     </edit-config>
     <edit-config target="NSPhotoLibraryAddUsageDescription" file="*-Info.plist" mode="merge">
       <string>need photo library access to save pictures there</string>
